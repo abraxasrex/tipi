@@ -1,0 +1,30 @@
+{
+  "name": "tipi",
+  "version": "1.0.0",
+  "description": "a node templating engine for making customized HTML and text content",
+  "main": "server.js",
+  "dependencies": {
+    "regex": "^0.1.1",
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abraxasrex/tipi.git"
+  },
+  "keywords": [
+    "templating",
+    "engine",
+    "html"
+  ],
+  "author": "abraxasrex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abraxasrex/tipi/issues"
+  },
+  "homepage": "https://github.com/abraxasrex/tipi#readme"
+}
