@@ -4,7 +4,7 @@ var fs = require('fs');
 
 var sub_model = [
   {
-    alias:'c',
+    alias:'a',
     tag: "h1",
     message: "started from the bottom"
   },
@@ -18,16 +18,19 @@ var sub_model = [
 module.exports = function(app){
   //define engine
   app.engine('tipi', function(filepath, options, callback ){
+    var arr = options.arr;
     fs.readFile(filepath, function(err, content){
       if(err){
         return callback(new Error(err));
       }
       var rendered = content.toString();
-      sub_model.forEach(function(option){
-        if(option !== 'settings' && option !== '_locals' && option !== 'cache'){
-          console.log('option key:', option.message, option.message, option.tag);
-          rendered = rendered.replace('^' + option.alias + '^', '<' + option.tag + '>' + option.message + '</'+option.tag+'>')
-        }
+      arr.forEach(function(option){
+        var regex = "/\^"+ option.alias + "\^/g";
+    //    var regex = new RegExp('^' + option.alias + '^', 'g');
+        // if(option !== 'settings' && option !== '_locals' && option !== 'cache'){
+          rendered = rendered.replace("^" + option.alias + "^", '<' + option.tag + '>' + option.message + '</'+option.tag+'>')
+        // }
+        console.log(regex);
       });
               return callback(null, rendered);
     });
