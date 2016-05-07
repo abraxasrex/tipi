@@ -1,4 +1,5 @@
 
+var fs = require('fs');
 module.exports = function(app){
   //define engine
   app.engine('tipi', function(filepath, options, callback ){
