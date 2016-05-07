@@ -1,0 +1,12 @@
+{
+  "tipis":[{
+    "exampleA": {
+      "tag": "h1",
+      "message": "started from the bottom"
+    },
+    "exampleB": {
+      "tag": "button",
+      "message": "now we here"
+    }
+  }]
+}
