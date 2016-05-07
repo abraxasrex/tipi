@@ -1,9 +1,7 @@
 var express  = require('express');
 var fs = require('fs');
-// var Regex = require("regex");
 var app = express();
-// var aMatch = new Regex(/\^a\^/, 'gi');
-// var bMatch = new Regex(/\^b\^/, 'gi');
+
 app.engine('tipi', function(filepath, options, callback ){
   fs.readFile(filepath, function(err, content){
     if(err){
