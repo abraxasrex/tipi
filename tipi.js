@@ -25,10 +25,10 @@ module.exports = function(app){
       }
       var rendered = content.toString();
       arr.forEach(function(option){
-        var regex = "/\^"+ option.alias + "\^/g";
-    //    var regex = new RegExp('^' + option.alias + '^', 'g');
+      //  var regex = "/\\^"+ option.alias + "\\^/g";
+        var regex = new RegExp('\\^' + option.alias + '\\^', 'g');
         // if(option !== 'settings' && option !== '_locals' && option !== 'cache'){
-          rendered = rendered.replace("^" + option.alias + "^", '<' + option.tag + '>' + option.message + '</'+option.tag+'>')
+          rendered = rendered.replace(regex, '<' + option.tag + '>' + option.message + '</'+option.tag+'>')
         // }
         console.log(regex);
       });

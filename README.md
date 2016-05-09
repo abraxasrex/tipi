@@ -14,4 +14,4 @@
 ### Coming soon:
 - defining attributes
 - JSON template definitions  
-- global replace 
+- ~global replace~
